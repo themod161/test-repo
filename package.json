@@ -1,0 +1,28 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "private": "false",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder",
+    "dist": "electron-builder --win --x64",
+    "publish": "electron-builder  --win --x64 --publish always"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "themod161",
+        "repo": "test-repo",
+        "vPrefixedTagName": true,
+        "private": false
+      }
+    ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "electron": "^25.3.1",
+    "electron-builder": "^24.4.0"
+  }
+}
